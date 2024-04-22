@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../components/Header'
 import PixarSlider from '../components/Pixar/PixarSlider'
 import PixarMovie from '../components/Pixar/PixarMovie'

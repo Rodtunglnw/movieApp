@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
@@ -15,8 +15,6 @@ interface Movie {
   name: string;
 }
 
-const screenWidth = window.innerWidth;
-
 const SliderTv = () => {
   const [curr, setCurr] = useState(0);
   const [movieList, setMovieList] = useState<Movie[]>([]);
@@ -32,7 +30,7 @@ const SliderTv = () => {
     console.log(data.data.results);
   };
 
-  const getImgElements = movieList.map((item, i) => {
+  const getImgElements = movieList.map((item) => {
     return (
       <img
         src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}

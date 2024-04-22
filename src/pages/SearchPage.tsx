@@ -24,7 +24,7 @@ function SearchPage() {
     fetchData(q);
   }, []);
 
-  const getImageElements = data.map((item, index) => {
+  const getImageElements = data.map((item: any, index: number) => {
     return (
       <div key={index}>
         <Link to={`/movie/${item.id}`} className="">

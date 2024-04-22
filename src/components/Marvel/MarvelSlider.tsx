@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import picture from "../../../public/images/unavailable-image.jpg";

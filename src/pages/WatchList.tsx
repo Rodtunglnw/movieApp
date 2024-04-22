@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -20,13 +20,12 @@ interface Movie {
 function WatchList() {
   const [movie, setMovie] = useState<Movie[]>([]);
 
-  const favouriteListString = localStorage.getItem("movies");
-  const prevFavList = JSON.parse(favouriteListString);
-
-  useEffect(() => {
-    const getData = async () => {
+  const getData = async () => {
+    const favouriteListString = localStorage.getItem("movies");
+    if (favouriteListString) {
+      const prevFavList = JSON.parse(favouriteListString);
       const getDetailMovie = await Promise.all(
-        prevFavList.map(async (item) => {
+        prevFavList.map(async (item: any) => {
           const { data } = await axios.get(
             `https://api.themoviedb.org/3/movie/${item}?api_key=edd30aa38a66fd481aab68561f86ce5f`
           );
@@ -36,7 +35,10 @@ function WatchList() {
       console.log(getDetailMovie);
 
       setMovie(getDetailMovie);
-    };
+    }
+  };
+
+  useEffect(() => {
     getData();
   }, []);
 

@@ -2,7 +2,6 @@ import "../App.css";
 import Header from "../components/Header";
 import AnimatedCard from "../components/AnimatedCard";
 import GenresMovieList from "../components/GenresMovieList";
-import Slider from "../components/Slider";
 import Carousel2 from "../components/Carousel2";
 
 function HomePage() {

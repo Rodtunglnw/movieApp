@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
@@ -30,7 +29,7 @@ function Carousel2() {
     console.log(data.data.results);
   };
 
-  const getImgElements = movieList.map((item, i) => {
+  const getImgElements = movieList.map((item) => {
     return (
       <img
         src={`https://image.tmdb.org/t/p/original/${item.backdrop_path}`}

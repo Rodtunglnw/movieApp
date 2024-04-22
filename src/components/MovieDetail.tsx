@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
 import AddWatchList from "./AddWatchList";
@@ -20,9 +20,20 @@ interface Movie {
 
 function MovieDetail() {
   const { movieId } = useParams();
-  const [movieDetail, setMovieDetail] = useState<Movie[]>([]);
+  const [movieDetail, setMovieDetail] = useState<Movie>({
+    id: 0,
+    title: "",
+    poster_path: "",
+    release_date: "",
+    vote_average: 0,
+    backdrop_path: "",
+    first_air_date: 0,
+    name: '',
+    genres: [],
+    overview: ''
+  });
   const [movieGenres, setMovieGenres] = useState<Movie[]>([]);
-  const getMovieData = async (theMovieId: number) => {
+  const getMovieData = async () => {
     const data = await axios.get(
       `https://api.themoviedb.org/3/movie/${movieId}?api_key=edd30aa38a66fd481aab68561f86ce5f`
     );
@@ -30,12 +41,12 @@ function MovieDetail() {
     setMovieGenres(data.data.genres);
     console.log(data);
   };
-  const getGenresMovieElements = movieGenres.map((item, index) => {
+  const getGenresMovieElements = movieGenres.map((item) => {
     return <p className=" ml-3 mt-1 text-white text-2xl">{item.name}</p>;
   });
 
   useEffect(() => {
-    getMovieData(movieId);
+    getMovieData();
   }, [movieId]);
 
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import DisneyMovieCard from "./DisneyMovieCard";
 import axios from "axios";
 interface Movie {

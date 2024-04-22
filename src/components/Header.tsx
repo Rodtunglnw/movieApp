@@ -1,9 +1,6 @@
-import React from "react";
-import { HiPlus, HiDotsVertical } from "react-icons/hi";
+import { HiPlus } from "react-icons/hi";
 import {
   HiHome,
-  HiMagnifyingGlass,
-  HiStar,
   HiPlayCircle,
   HiTv,
 } from "react-icons/hi2";

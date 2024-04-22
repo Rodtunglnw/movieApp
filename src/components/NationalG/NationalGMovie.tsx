@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import NationGMovieCard from "./NationalGMovieCard";
-import PictureCard from "../PictureCard";
 
 interface Movie {
   id: number;

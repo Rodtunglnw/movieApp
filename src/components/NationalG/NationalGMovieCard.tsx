@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 interface Movie {
   id: number;
@@ -11,7 +10,7 @@ interface Movie {
   first_air_date: number;
   name: string;
 }
-function NationGMovieCard(props: Movie) {
+function NationGMovieCard(props: { movie: Movie }) {
   const { movie } = props;
   return (
     <Link to={`/movie/${movie.id}`} className="w-full">

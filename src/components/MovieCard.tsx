@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 interface Movie {
   id: number;
@@ -12,7 +11,7 @@ interface Movie {
   name: string;
 }
 
-function MovieCard(props: Movie) {
+function MovieCard(props: { movie: Movie }) {
   const { movie } = props;
   return (
     <Link to={`/movie/${movie.id}`} className="w-full">

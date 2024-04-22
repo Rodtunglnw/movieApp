@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../components/Header'
 import StarwarSlider from '../components/Starwar/StarwarSlider'
 import StarwarMovie from '../components/Starwar/StarwarMovie'

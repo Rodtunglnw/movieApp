@@ -1,4 +1,3 @@
-import React from 'react'
 import Header from '../components/Header'
 import DisneySlider from '../components/Disney/DisneySlider'
 import DisneyMovie from '../components/Disney/DisneyMovie'

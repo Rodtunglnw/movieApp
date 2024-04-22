@@ -1,6 +1,6 @@
-import React, { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-function AddWatchList(props) {
+function AddWatchList(props: any) {
   const { movieId } = props;
   const [isFav, setIsFav] = useState(false);
 

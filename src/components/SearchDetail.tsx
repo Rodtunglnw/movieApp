@@ -1,7 +1,7 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
-function SearchDetail(props) {
+function SearchDetail(props: any) {
   const { keyword } = props;
   const getMovieDetail = async () => {
     const data = await axios.get(

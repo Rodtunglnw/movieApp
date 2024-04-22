@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
@@ -14,8 +14,6 @@ interface Movie {
   first_air_date: number;
   name: string;
 }
-
-const screenWidth = window.innerWidth;
 
 const Slider = () => {
   const [movieList, setMovieList] = useState<Movie[]>([]);
@@ -50,7 +48,7 @@ const Slider = () => {
       />
 
       <div className="flex overflow-x-auto w-full px-16 py-4 scrollbar-hide scroll-smooth ">
-        {movieList.map((item, i) => {
+        {movieList.map((item) => {
           return (
             <img
               key={item.id}

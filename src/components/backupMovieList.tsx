@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -33,19 +32,12 @@ function MovieList(props: { genreId: number }) {
     getMovieByGenreId(genreId);
   }, [genreId]);
 
-  const sliderRight = (element) => {
+  const sliderRight = (element: any) => {
     element.scrollLeft += 1000;
   };
 
-  const sliderLeft = (element) => {
+  const sliderLeft = (element: any) => {
     element.scrollLeft -= 1000;
-  };
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
   };
 
   return (
@@ -59,7 +51,7 @@ function MovieList(props: { genreId: number }) {
         ref={elementRef}
         className="flex overflow-x-auto gap-8 scrollbar-hide pt-5 px-3 pb-5  scroll-smooth"
       >
-        {movieList.map((item, index) => {
+        {movieList.map((item) => {
           return <MovieCard movie={item} />;
         })}
       </div>

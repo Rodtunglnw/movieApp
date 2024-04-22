@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -42,7 +41,7 @@ function MovieList(props: { genreId: number }) {
   return (
     <div className="">
       <Slider {...settings} className="">
-        {movieList.map((item, index) => {
+        {movieList.map((item) => {
           return <MovieCard movie={item} />;
         })}
       </Slider>

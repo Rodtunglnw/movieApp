@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import picture from "../../../public/images/unavailable-image.jpg";
 interface Movie {
@@ -12,7 +11,7 @@ interface Movie {
   first_air_date: number;
   name: string;
 }
-function PictureCard(props) {
+function PictureCard(props: { movie: Movie }) {
   const { movie } = props;
   return (
     <Link to={`/movie/${movie.id}`} className="w-full">
